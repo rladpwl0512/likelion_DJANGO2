@@ -1,0 +1,57 @@
+{%extends 'base.html' %}
+{% block content %}
+<!doctype html>
+<html lang = "ko">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<style>
+    @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
+    h1{ font-family: 'Hanna', sans-serif;}
+    h4{ font-family: 'Hanna', sans-serif;}
+    p{font-family: 'Hanna', sans-serif; }
+    button{ font-family: 'Hanna', sans-serif; }
+
+    html{
+        width:100%;
+        height:100%;
+    }
+    h1{color:aliceblue;}
+    h4{color:aliceblue;}
+    p{color:aliceblue;}
+    .background{
+        background: #8E0E00;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+
+
+</style>
+</head>
+
+<body class = "background">
+
+<br>
+<div style="width: 30%; float:none; margin:0 auto" >
+<div class="container">
+    <form action="{%url 'create' %}">
+        <h4>작품 제목: </h4>
+        <input type="text" name="title">
+        <br>
+        <br>
+        <h4>추천하는 이유: </h4>
+        <textarea cols=40 rows=10 name="body"></textarea>
+       
+        <br>
+        <br>
+       
+            <button class="btn btn-dark btn-lg" style="width: 50%" type="submit">추천하기!</button>    
+    </div>
+      
+    </form>
+</div>
+
+
+
+{% endblock %}

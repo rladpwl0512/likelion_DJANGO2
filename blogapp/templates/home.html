@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!doctype html>
+<html lang = "ko">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<style>
+    @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
+    h1{ font-family: 'Hanna', sans-serif;}
+    h2{ font-family: 'Hanna', sans-serif;}
+    p{font-family: 'Hanna', sans-serif; }
+    button{ font-family: 'Hanna', sans-serif; }
+
+    html{
+        width:100%;
+        height:100%;
+    }
+    h1{color:white;}
+    h2{color:aliceblue;}
+    p{color:aliceblue;}
+    .background{
+        background: #8E0E00;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+</style>
+</head>
+    <body class = "background">
+    <h1><p class="text-center">💁슈니들의 넷플릭SWU💃</p></h1>
+    <h2><p class="text-center">"추천하기"메뉴를 통해  나만보기 아까운 작품들을 추천해주세요!</p></h2>
+    <br>
+    <br>
+    <div style="width: 30%; float:none; margin:0 auto" >
+    
+
+        {% for blog in blogs.all %}
+            <h1><p class="text-center">" {{blog.title}} " </p></h1>
+            <p class="text-center">{{blog.pub_date}}</p></h1>
+            <p class="text-center">{{ blog.summary }}</h1>
+                <a href = "{%url 'detail' blog.id%}">...상세보기</a>
+            </p>
+            <br>
+            <br>
+        {% endfor %}
+        {% endblock %}
+   
+    </div>
+    </body>
+</html>
